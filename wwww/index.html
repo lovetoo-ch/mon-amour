@@ -1,0 +1,83 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>wwww</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+        <style>
+            body { font-family: 'Roboto', sans-serif; background: #1b2e47; color: #ffffff; text-align: center; padding: 30px; position: relative; overflow: hidden; min-height: 100vh; }
+            h1 { font-family: 'Lobster', cursive; font-size: 2.5em; color: #ff3131; margin-bottom: 20px; }
+            .counter { font-size: 1.5em; background: #ffffff; border: 2px dashed #ff3131; padding: 15px; border-radius: 10px; margin-bottom: 20px; animation: pulse 2s infinite; color: #1b2e47; }
+            @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+            .carousel { position: relative; width: 100%; height: 400px; overflow: hidden; margin: 20px auto; max-width: 800px; }
+            .carousel-inner { display: flex; transition: transform 0.5s ease-in-out; }
+            .carousel img { width: 100%; height: 400px; object-fit: cover; border-radius: 15px; border: 2px solid #ff3131; flex-shrink: 0; }
+            .message, .meeting-story { font-size: 1.2em; margin: 20px 0; background: #ffffff; padding: 15px; border-radius: 10px; border-left: 5px solid #ff3131; color: #1b2e47; }
+            .music-link { font-size: 1em; word-break: break-all; margin-top: 20px; }
+            .emoji { position: absolute; font-size: 1.5em; opacity: 0.7; animation: fall 5s linear forwards; color: #ff3131; z-index: 2; }
+            .message-anim { position: absolute; font-size: 1.2em; color: #ff3131; opacity: 0.7; animation: float 6s linear forwards; z-index: 2; }
+            @keyframes fall { 0% { transform: translateY(-100%); opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+            @keyframes float { 0% { transform: translateY(100vh); opacity: 1; } 100% { transform: translateY(-100vh); opacity: 0; } }
+            @media (max-width: 768px) { .carousel { height: 300px; } .carousel img { height: 300px; } }
+            @media (max-width: 480px) { .carousel { height: 200px; } .carousel img { height: 200px; } }
+        </style>
+    </head>
+    <body>
+        <h1>wwww</h1>
+        <div class="counter" id="dateCounter"></div>
+        <div class="carousel">
+            <div class="carousel-inner" id="carouselInner">
+                <img src="https://via.placeholder.com/150?text=Photo1" alt="Photo">
+            </div>
+        </div>
+        <p class="message">22222</p>
+        <p class="meeting-story">2222</p>
+        <p class="music-link">Musique: https://www.youtube.com/watch?v=450p7goxZqg</p>
+        <script>
+            const emojis = ['❤️', '💕', '💖', '💞'];
+            const messages = ['Mon cœur', 'I love you', 'Forever', 'Je t’aime'];
+            let animationDuration = 10000; // 10 segundos
+            const emojiInterval = setInterval(() => {
+                const emoji = document.createElement('div');
+                emoji.classList.add('emoji');
+                emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = `${Math.random() * 100}%`;
+                document.body.appendChild(emoji);
+                setTimeout(() => emoji.remove(), 5000);
+            }, 300);
+            const messageInterval = setInterval(() => {
+                const msg = document.createElement('div');
+                msg.classList.add('message-anim');
+                msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+                msg.style.left = `${Math.random() * 80 + 10}%`;
+                document.body.appendChild(msg);
+                setTimeout(() => msg.remove(), 6000);
+            }, 500);
+            setTimeout(() => { clearInterval(emojiInterval); clearInterval(messageInterval); }, animationDuration);
+            const carouselInner = document.getElementById('carouselInner');
+            let currentIndex = 0;
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % 1;
+                carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }, 3000);
+        </script>
+        
+    <script>
+        const startDate = new Date('2222-02-22T14:22:00');
+        function updateCounter() {
+            const now = new Date();
+            const diffMs = now - startDate;
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            const diffHours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('dateCounter').innerText = `Ensemble depuis : ${diffDays}j ${diffHours}h ${diffMinutes}m`;
+            setTimeout(updateCounter, 60000);
+        }
+        updateCounter();
+    </script>
+    
+    </body>
+    </html>
+    

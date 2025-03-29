@@ -15,7 +15,7 @@
             .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; justify-content: center; margin: 20px auto; max-width: 80%; }
             .photo-item img { width: 100%; height: 120px; object-fit: cover; border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); border: 2px solid #ffd700; max-width: 120px; transition: transform 0.3s; }
             .photo-item img:hover { transform: scale(1.1); }
-            .message, .meeting-story { font-size: 1.2em; margin: 20px auto; background: rgba(255, 255, 255, 0.3); padding: 15px; border-radius: 10px; border-left: 5px solid #ffd700; max-width: 600px; }
+            .message, .meeting-story { font-size: 1.2em; margin: 20px auto; background: rgba(255, 255, 255, 0.3); padding: 15px; border-radius: 10px; border-left: 5px solid #ffd700; max-width: 600px; white-space: pre-wrap; }
             .music-container { margin: 20px auto; max-width: 600px; }
             .emoji { position: absolute; font-size: 1.5em; opacity: 0.7; animation: rise 5s linear infinite; color: #ffd700; z-index: 2; }
             @keyframes rise { 0% { transform: translateY(100%) scale(0.5); opacity: 0; } 20% { opacity: 0.7; } 100% { transform: translateY(-50%) scale(1.5); opacity: 0; } }
@@ -26,10 +26,23 @@
         <h1>MAria Jose</h1>
         <div class="counter" id="dateCounter"></div>
         <div class="photo-grid">
-            <div class="photo-item"><img src="https://lovetoo-ch.github.io/mon-amour/MAria_Jose/photo_0.jpg" alt="Photo"></div>
+            <div class="photo-item"><img src="https://lovetoo-ch.github.io/mon-amour/MAria_Jose/photo_0.jpg" alt="Photo"></div><div class="photo-item"><img src="https://lovetoo-ch.github.io/mon-amour/MAria_Jose/photo_1.jpg" alt="Photo"></div><div class="photo-item"><img src="https://lovetoo-ch.github.io/mon-amour/MAria_Jose/photo_2.jpg" alt="Photo"></div>
         </div>
-        <p class="message">111111111111</p>
-        <p class="meeting-story">111111</p>
+        <p class="message">Mon amour,
+
+Je prends un instant, ici et maintenant, pour te dire quelque chose d’essentiel : je t’aime, profondément, sincèrement, et infiniment. Ce que je ressens pour toi dépasse les mots, les gestes, le temps. C’est une présence constante dans mon cœur, comme une lumière douce qui m’accompagne chaque jour.
+
+Depuis que tu es entré(e) dans ma vie, tout a changé. Les moments simples sont devenus magiques, les silences ont trouvé leur sens, et même les jours difficiles sont devenus plus légers avec toi à mes côtés. Ton sourire, ton regard, ta voix… tout chez toi m’apaise et m’émerveille.
+
+Tu es bien plus qu’un amour. Tu es mon refuge, mon partenaire, mon rêve éveillé. Avec toi, je me sens complet(e), libre d’être moi-même, aimé(e) pour ce que je suis. Je me surprends à imaginer un futur à deux, à construire une vie remplie de souvenirs, d’aventures et de tendresse.
+
+Je veux continuer à découvrir le monde à travers tes yeux, te soutenir dans chaque bataille, célébrer chaque victoire à tes côtés. Je veux t’aimer dans les jours ordinaires, dans les éclats de rires, dans les silences partagés, et même dans les larmes, quand elles viendront. Je veux t’aimer dans l’instant et dans l’éternité.
+
+Merci d’exister. Merci de m’aimer. Merci d’être toi.
+
+À toi, pour toujours.
+Je t’aime.</p>
+        <p class="meeting-story">wwww</p>
         
         <script>
             const emojis = ['💕', '💖', '💞', '❤️', '😍'];
@@ -50,7 +63,7 @@
         </script>
         
     <script>
-        const startDate = new Date('2025-03-02T11:11:00');
+        const startDate = new Date('1111-11-11T11:11:00');
         function updateCounter() {
             const now = new Date();
             const diffMs = now - startDate;

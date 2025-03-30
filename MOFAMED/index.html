@@ -1,0 +1,47 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MOFAMED</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        <style>
+            body { font-family: 'Poppins', sans-serif; background: #1B263B; color: #FFFFFF; text-align: center; padding: 30px; min-height: 100vh; overflow-x: hidden; }
+            h1 { font-family: 'Dancing Script', cursive; font-size: 3em; color: #FF4081; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); margin-bottom: 20px; }
+            .counter { font-size: 1.5em; background: rgba(255, 255, 255, 0.2); border: 2px dashed #FFFFFF; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
+            .photo-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px auto; max-width: 80%; }
+            .photo-item img { width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); border: 2px solid #FFFFFF; transition: transform 0.3s; }
+            .photo-item img:hover { transform: scale(1.1); }
+            .message, .meeting-story { font-size: 1.2em; margin: 20px auto; background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 10px; border-left: 5px solid #FFFFFF; max-width: 600px; }
+            .music-container { margin: 20px auto; max-width: 600px; }
+        </style>
+    </head>
+    <body>
+        <h1>MOFAMED</h1>
+        <div class="counter" id="dateCounter"></div>
+        <div class="photo-grid">
+            <div class="photo-item"><img src="https://lovetoo-ch.github.io/mon-amour/MOFAMED/photo_0.jpg" alt="Photo"></div>
+        </div>
+        <p class="message">TESTE</p>
+        <p class="meeting-story">1111111111111111111111111</p>
+        <div class="music-container"><iframe width="100%" height="315" src="https://www.youtube.com/embed/tu27kSOEGE4?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+        
+        <script>
+            const startDate = new Date('1111-11-11T11:11:00');
+            function updateCounter() {
+                const now = new Date();
+                const diffMs = now - startDate;
+                const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                const diffHours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById('dateCounter').innerText = `Depuis ce moment : ${diffDays} jours, ${diffHours} heures, ${diffMinutes} minutes 🎉`;
+                setTimeout(updateCounter, 60000);
+            }
+            updateCounter();
+        </script>
+        
+    </body>
+    </html>
+    
